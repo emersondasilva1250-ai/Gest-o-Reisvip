@@ -165,6 +165,50 @@ input,select,textarea{font-family:inherit}
 .reseller-cta{display:flex;gap:10px;flex-wrap:wrap}
 @media(max-width:640px){.reseller-section{padding:20px 16px}.reseller-header{flex-direction:column;text-align:center}.reseller-cta{justify-content:center}}
 
+.rd-overlay{position:fixed;inset:0;background:var(--bg);z-index:200;overflow-y:auto;padding:0}
+.rd-topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--panel);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:201}
+.rd-topbar h2{font-size:16px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px}
+.rd-topbar .rd-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:4px 8px}
+.rd-tabs{display:flex;gap:0;background:var(--panel);border-bottom:1px solid var(--border);padding:0 16px;overflow-x:auto}
+.rd-tab{padding:10px 16px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s}
+.rd-tab.active{color:var(--brand);border-bottom-color:var(--brand)}
+.rd-content{padding:16px;max-width:900px;margin:0 auto}
+.rd-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.rd-stat{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.rd-stat .rd-stat-val{font-size:22px;font-weight:900;color:var(--brand)}
+.rd-stat .rd-stat-lbl{font-size:11px;color:var(--muted);margin-top:4px}
+.rd-prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.rd-prod-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.rd-prod-card .rd-prod-head{display:flex;align-items:center;gap:12px}
+.rd-prod-card .rd-prod-head .rd-prod-logo{width:40px;height:40px;border-radius:10px;overflow:hidden}
+.rd-prod-card .rd-prod-head .rd-prod-logo svg{width:100%;height:100%}
+.rd-prod-card .rd-prod-name{font-size:14px;font-weight:700;color:#fff}
+.rd-prod-plans{display:flex;flex-direction:column;gap:6px}
+.rd-plan-row{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border-radius:8px;padding:8px 12px}
+.rd-plan-row .rd-plan-name{font-size:12px;color:var(--ink)}
+.rd-plan-row .rd-plan-price{font-size:12px;font-weight:700;color:var(--brand)}
+.rd-plan-row .rd-sell-btn{background:var(--brand);color:#fff;border:none;border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;cursor:pointer}
+.rd-orders-list{display:flex;flex-direction:column;gap:10px}
+.rd-order{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.rd-order .rd-o-prod{font-size:13px;font-weight:700;color:#fff}
+.rd-order .rd-o-client{font-size:12px;color:var(--muted)}
+.rd-order .rd-o-price{font-size:14px;font-weight:800;color:var(--green)}
+.rd-order .rd-o-status{font-size:11px;padding:4px 10px;border-radius:20px;font-weight:700}
+.rd-o-status.pending{background:rgba(245,158,11,.15);color:#f59e0b}
+.rd-o-status.sent{background:rgba(16,185,129,.15);color:#10b981}
+.rd-sell-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:center;justify-content:center;padding:16px}
+.rd-sell-form{background:var(--panel);border-radius:16px;padding:24px;max-width:440px;width:100%;max-height:90vh;overflow-y:auto}
+.rd-sell-form h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.rd-sell-form .field{margin-bottom:12px}
+.rd-sell-form label{font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:4px}
+.rd-sell-form input,.rd-sell-form select,.rd-sell-form textarea{width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:13px}
+.rd-sell-form .rd-sell-summary{background:var(--bg2);border-radius:10px;padding:14px;margin-bottom:16px}
+.rd-sell-form .rd-sell-summary .rd-ss-row{display:flex;justify-content:space-between;font-size:12px;color:var(--ink);padding:4px 0}
+.rd-sell-form .rd-sell-summary .rd-ss-row.total{font-weight:800;color:var(--green);font-size:14px;border-top:1px solid var(--border);margin-top:6px;padding-top:8px}
+.rd-withdraw-form{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px;margin-top:16px}
+.rd-withdraw-form h4{font-size:14px;font-weight:800;color:#fff;margin-bottom:12px}
+@media(max-width:640px){.rd-stats{grid-template-columns:repeat(2,1fr)}.rd-prod-grid{grid-template-columns:1fr}}
+
 /* TRUST */
 .trust-strip{background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px;overflow-x:auto}
 .trust-strip-inner{max-width:1320px;margin:0 auto;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
@@ -345,7 +389,17 @@ input,select,textarea{font-family:inherit}
 .bnav-btn .bnav-ico{font-size:20px}
 .bnav-ico-wrap{position:relative}
 .bnav-badge{background:var(--brand);color:#fff;font-size:8px;font-weight:800;min-width:14px;height:14px;border-radius:99px;display:flex;align-items:center;justify-content:center;position:absolute;top:-2px;right:-6px;padding:0 3px}
-@media(max-width:640px){.bottom-nav{display:block}body{padding-bottom:64px}}
+@media(max-width:640px){.bottom-nav{display:block}body{padding-bottom:64px}.wa-float{bottom:78px}.wa-float-label{display:none}}
+
+/* WHATSAPP FLOATING BUTTON */
+.wa-float{position:fixed;bottom:24px;right:16px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;isolation:isolate}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;background:rgba(37,211,102,.3);animation:waPulse 2s ease-out infinite;pointer-events:none;z-index:-1}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.5)}
+.wa-float:active{transform:scale(.95)}
+.wa-float svg{width:30px;height:30px;fill:#fff;pointer-events:none}
+.wa-float-label{position:absolute;right:64px;background:var(--panel);color:#fff;font-size:12px;font-weight:600;padding:6px 12px;border-radius:8px;white-space:nowrap;box-shadow:var(--shadow);opacity:0;transform:translateX(8px);transition:.2s;pointer-events:none}
+.wa-float:hover .wa-float-label{opacity:1;transform:translateX(0)}
+@keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
 
 /* LANGUAGE SWITCHER */
 .lang-switch{position:relative;display:inline-flex;align-items:center}
@@ -439,7 +493,7 @@ var T = {
   anos: {pt:"Anos",en:"Years",es:"Años"},
   // Promo
   programaRevenda: {pt:"PROGRAMA DE REVENDA",en:"RESELLER PROGRAM",es:"PROGRAMA DE REVENTA"},
-  ganheAte: {pt:"Ganhe até 40% de margem",en:"Earn up to 40% margin",es:"Gane hasta 40% de margen"},
+  ganheAte: {pt:"Revenda e fique com 100% do lucro",en:"Resell and keep 100% of the profit",es:"Revenda y quédese con el 100% de la ganancia"},
   candidatarAgora: {pt:"Candidatar-se agora",en:"Apply now",es:"Postularse ahora"},
   // Products
   todosProdutos: {pt:"Todos os Produtos",en:"All Products",es:"Todos los Productos"},
@@ -552,12 +606,12 @@ var T = {
   // Reseller section
   progRevendaTitle: {pt:"Programa de Revenda Reisvip",en:"Reisvip Reseller Program",es:"Programa de Reventa Reisvip"},
   progRevendaSub: {pt:"Torne-se um revendedor autorizado e construa o seu negócio digital",en:"Become an authorized reseller and build your digital business",es:"Conviértase en revendedor autorizado y construya su negocio digital"},
-  ate40margem: {pt:"Até 40% de Margem",en:"Up to 40% Margin",es:"Hasta 40% de Margen"},
-  ate40desc: {pt:"Preços exclusivos por atacado com margens superiores ao mercado",en:"Exclusive wholesale prices with above-market margins",es:"Precios exclusivos al por mayor con márgenes superiores al mercado"},
+  ate40margem: {pt:"100% Lucro Seu",en:"100% Your Profit",es:"100% Su Ganancia"},
+  ate40desc: {pt:"O valor da venda é todo seu — revenda ao preço que quiser e fique com tudo",en:"The sale value is all yours — resell at whatever price you want and keep everything",es:"El valor de la venta es todo suyo — revenda al precio que quiera y quédese con todo"},
   entregaAuto: {pt:"Entrega Automatizada",en:"Automated Delivery",es:"Entrega Automatizada"},
   entregaAutoDesc: {pt:"Sistema de entrega instantânea para os seus clientes",en:"Instant delivery system for your customers",es:"Sistema de entrega instantánea para sus clientes"},
   painelRevenda: {pt:"Painel de Revenda",en:"Reseller Dashboard",es:"Panel de Reventa"},
-  painelDesc: {pt:"Dashboard dedicado para gerir vendas, stock e comissões",en:"Dedicated dashboard to manage sales, stock and commissions",es:"Dashboard dedicado para gestionar ventas, stock y comisiones"},
+  painelDesc: {pt:"Revenda directo do seu dispositivo — gira pedidos, clientes e saldo",en:"Resell directly from your device — manage orders, clients and balance",es:"Revenda directo desde su dispositivo — gestione pedidos, clientes y saldo"},
   suporteVIP: {pt:"Suporte VIP 24/7",en:"24/7 VIP Support",es:"Soporte VIP 24/7"},
   suporteVIPdesc: {pt:"Canal prioritário de suporte dedicado a revendedores",en:"Priority support channel for resellers",es:"Canal prioritario de soporte para revendedores"},
   reposicaoAuto: {pt:"Reposição Automática",en:"Auto Restocking",es:"Reposición Automática"},
@@ -570,9 +624,9 @@ var T = {
   verificacao: {pt:"Verificação",en:"Verification",es:"Verificación"},
   verificacaoDesc: {pt:"A nossa equipa valida a sua identidade em até 48h",en:"Our team validates your identity within 48h",es:"Nuestro equipo valida su identidad en hasta 48h"},
   aprovacao: {pt:"Aprovação",en:"Approval",es:"Aprobación"},
-  aprovacaoDesc: {pt:"Receba acesso ao painel de revendedor com preços especiais",en:"Get access to the reseller dashboard with special prices",es:"Reciba acceso al panel de revendedor con precios especiales"},
+  aprovacaoDesc: {pt:"Receba acesso ao painel de revendedor e comece a vender directo do seu dispositivo",en:"Get access to the reseller dashboard and start selling directly from your device",es:"Reciba acceso al panel de revendedor y empiece a vender directo desde su dispositivo"},
   venda: {pt:"Venda",en:"Sell",es:"Venta"},
-  vendaDesc: {pt:"Comece a vender e ganhar comissões imediatamente",en:"Start selling and earning commissions immediately",es:"Comience a vender y ganar comisiones inmediatamente"},
+  vendaDesc: {pt:"Comece a revender e fique com 100% do valor das vendas",en:"Start reselling and keep 100% of the sales value",es:"Comience a revender y quédese con el 100% del valor de ventas"},
   processoVerificacao: {pt:"Processo de Verificação",en:"Verification Process",es:"Proceso de Verificación"},
   biDoc: {pt:"Fotocópia do Bilhete de Identidade (BI)",en:"Copy of Identity Document (ID)",es:"Fotocopia del Documento de Identidad"},
   numVerificado: {pt:"Número de contacto verificado",en:"Verified contact number",es:"Número de contacto verificado"},
@@ -580,7 +634,7 @@ var T = {
   dadosPagamento: {pt:"Dados de pagamento (M-Pesa / Conta bancária)",en:"Payment details (M-Pesa / Bank account)",es:"Datos de pago (M-Pesa / Cuenta bancaria)"},
   aceitarTermos: {pt:"Aceitar termos e condições de revenda",en:"Accept reseller terms and conditions",es:"Aceptar términos y condiciones de reventa"},
   maior18: {pt:"Maior de 18 anos",en:"Over 18 years old",es:"Mayor de 18 años"},
-  verificacaoNota: {pt:"A verificação é obrigatória para garantir a segurança dos revendedores e clientes. Os dados são usados exclusivamente para validação e processamento de pagamentos de comissões. A retirada de valores requer verificação completa.",en:"Verification is mandatory to ensure the safety of resellers and customers. Data is used exclusively for validation and commission payment processing. Withdrawal requires full verification.",es:"La verificación es obligatoria para garantizar la seguridad de revendedores y clientes. Los datos se usan exclusivamente para validación y procesamiento de pagos de comisiones. El retiro requiere verificación completa."},
+  verificacaoNota: {pt:"A verificação é obrigatória para garantir a segurança dos revendedores e clientes. Os dados são usados exclusivamente para validação e processamento de pagamentos. A retirada de valores requer verificação completa.",en:"Verification is mandatory to ensure the safety of resellers and customers. Data is used exclusively for validation and payment processing. Withdrawal requires full verification.",es:"La verificación es obligatoria para garantizar la seguridad de revendedores y clientes. Los datos se usan exclusivamente para validación y procesamiento de pagos. El retiro requiere verificación completa."},
   candidatarAgora2: {pt:"Candidatar-se Agora",en:"Apply Now",es:"Postularse Ahora"},
   falarEquipa: {pt:"Falar com a Equipa",en:"Talk to the Team",es:"Hablar con el Equipo"},
   saberMaisRevenda: {pt:"Olá! Quero saber mais sobre o programa de revenda Reisvip.",en:"Hello! I want to know more about the Reisvip reseller program.",es:"¡Hola! Quiero saber más sobre el programa de reventa Reisvip."},
@@ -660,16 +714,20 @@ var BRAND_SVGS = {
   nordvpn:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#4687FF"/><path d="M22 10l-10 6v8c0 6 4.5 11.5 10 13 5.5-1.5 10-7 10-13v-8l-10-6z" fill="none" stroke="#fff" stroke-width="2"/><text x="22" y="27" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" font-family="Inter,sans-serif">N</text></svg>',
   primevideo:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#00A8E1"/><path d="M14 18l8 6-8 6V18z" fill="#fff"/><path d="M12 32c4 2 9 3 14 2 3-1 6-2 8-4" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
   crunchyroll:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#F47521"/><circle cx="22" cy="22" r="10" fill="#fff"/><circle cx="25" cy="19" r="4" fill="#F47521"/><circle cx="26" cy="18" r="2" fill="#fff"/></svg>',
-  virtualcard:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#1A1A2E"/><rect x="8" y="14" width="28" height="18" rx="3" fill="none" stroke="#E0A526" stroke-width="2"/><rect x="12" y="19" width="8" height="5" rx="1" fill="#E0A526"/><path d="M8 24h28" stroke="#E0A526" stroke-width="1.5"/></svg>'
+  virtualcard:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#1A1A2E"/><rect x="8" y="14" width="28" height="18" rx="3" fill="none" stroke="#E0A526" stroke-width="2"/><rect x="12" y="19" width="8" height="5" rx="1" fill="#E0A526"/><path d="M8 24h28" stroke="#E0A526" stroke-width="1.5"/></svg>',
+  claude:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#D4A27F"/><path d="M25.5 14L17 30h3.5l2-4.5h7L31.5 30H35L26.5 14h-1zm.5 3.5L29 24.5h-6l3-7z" fill="#1A1206"/></svg>',
+  m365:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#0078D4"/><path d="M10 13l9-1.2v8.7H10V13zm10-1.4L32 10v10.5H20V11.6zM10 22.5h9v8.7l-9-1.2V22.5zm10 0h12V34l-12-1.5V22.5z" fill="#fff"/><circle cx="34" cy="12" r="6" fill="#6264A7"/><path d="M32.2 10h3.6v4h-3.6z" fill="#fff"/></svg>',
+  gemini:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#1A73E8"/><path d="M22 8c0 7.7-6.3 14-14 14 7.7 0 14 6.3 14 14 0-7.7 6.3-14 14-14-7.7 0-14-6.3-14-14z" fill="#fff"/></svg>',
+  grok:'<svg viewBox="0 0 44 44"><rect width="44" height="44" rx="10" fill="#000"/><text x="22" y="29" text-anchor="middle" font-size="20" font-weight="900" fill="#fff" font-family="Inter,sans-serif">𝕏</text></svg>'
 };
 
 var PRODUTOS = [
   {id:"d1",nome:"Netflix Premium",brand:"Netflix",logo:"netflix",categoria:"Streaming",plans:[{dur:"Compartilhada",preco:249},{dur:"Privada 4K",preco:699}],stock:9999,tag:"hot",rating:4.9,sold:2340,
    descricao:"Conta Netflix Premium. Compartilhada (acesso ao perfil) ou Privada com 4 ecrãs em Ultra HD 4K.",
    features:["Ultra HD 4K","Downloads Offline","Perfis Individuais","Catálogo Completo"]},
-  {id:"d2",nome:"Spotify Premium",brand:"Spotify",logo:"spotify",categoria:"Streaming",plans:[{dur:"1 Mês",preco:199},{dur:"3 Meses",preco:550,save:"8%"},{dur:"12 Meses",preco:1990,save:"17%"}],stock:9999,tag:"best",rating:4.8,sold:3120,
-   descricao:"Spotify Premium individual. Música sem anúncios, qualidade superior, modo offline e playlists ilimitadas.",
-   features:["Sem Anúncios","Modo Offline","Qualidade Superior","Playlists Ilimitadas"]},
+  {id:"d2",nome:"Spotify Premium",brand:"Spotify",logo:"spotify",categoria:"Streaming",plans:[{dur:"Individual 1 Mês",preco:190},{dur:"Individual 3 Meses",preco:450,save:"21%"},{dur:"Individual 12 Meses",preco:1500,save:"34%"},{dur:"Família 1 Mês",preco:320}],stock:9999,tag:"best",rating:4.8,sold:3120,
+   descricao:"Spotify Premium. Conta privada individual ou família (até 5 membros). Sem anúncios, offline, áudio 320 Kbps.",
+   features:["Sem Anúncios","Modo Offline","Áudio 320 Kbps","Conta Privada","Família até 5 Membros"]},
   {id:"d3",nome:"Disney+ Premium",brand:"Disney",logo:"disney",categoria:"Streaming",plans:[{dur:"1 Mês",preco:350},{dur:"3 Meses",preco:950,save:"10%"},{dur:"12 Meses",preco:3500,save:"17%"}],stock:9999,tag:"",rating:4.7,sold:890,
    descricao:"Disney+, Marvel, Star Wars, Pixar e National Geographic. Streaming 4K com downloads offline.",
    features:["Disney & Marvel","Star Wars","4K Streaming","Downloads Offline"]},
@@ -715,15 +773,28 @@ var PRODUTOS = [
   {id:"d16",nome:"NordVPN Premium",brand:"NordVPN",logo:"nordvpn",categoria:"Chaves de Activação",plans:[{dur:"1 Mês",preco:650},{dur:"12 Meses",preco:5500,save:"30%"}],stock:9999,tag:"",rating:4.6,sold:980,
    descricao:"VPN premium para navegação segura e privada. 5900+ servidores, desbloqueio geográfico e velocidade ultra-rápida.",
    features:["5900+ Servidores","Kill Switch","Double VPN","Streaming Unlock"]},
-  {id:"d18",nome:"Amazon Prime Video",brand:"Amazon",logo:"primevideo",categoria:"Streaming",plans:[{dur:"1 Mês",preco:350},{dur:"3 Meses",preco:950,save:"10%"},{dur:"12 Meses",preco:3500,save:"17%"}],stock:9999,tag:"new",rating:4.7,sold:620,
-   descricao:"Streaming com filmes exclusivos, séries originais Amazon e conteúdo 4K HDR. Acesso multi-dispositivo.",
-   features:["Filmes Exclusivos","Séries Originais","4K HDR","Multi-Dispositivo"]},
-  {id:"d19",nome:"Crunchyroll Mega Fan",brand:"Crunchyroll",logo:"crunchyroll",categoria:"Streaming",plans:[{dur:"1 Mês",preco:299},{dur:"3 Meses",preco:799,save:"11%"},{dur:"12 Meses",preco:2900,save:"19%"}],stock:9999,tag:"new",rating:4.8,sold:450,
-   descricao:"O melhor do anime em HD e 4K. Simulcasts, biblioteca completa, sem anúncios e downloads offline.",
-   features:["Anime HD/4K","Simulcasts","Sem Anúncios","Downloads Offline"]},
-  {id:"d20",nome:"Cartão Virtual Internacional",brand:"Virtual Card",logo:"virtualcard",categoria:"Pagamentos",plans:[{dur:"$5 USD",preco:500},{dur:"$10 USD",preco:900},{dur:"$25 USD",preco:2100},{dur:"$50 USD",preco:4000},{dur:"$100 USD",preco:7800}],stock:9999,tag:"hot",rating:4.9,sold:1800,
-   descricao:"Cartão virtual Visa/Mastercard para compras online internacionais. Spotify, Netflix, Google Play, App Store e mais.",
-   features:["Visa/Mastercard","Compras Internacionais","Recarga Flexível","Entrega Instantânea"]}
+  {id:"d18",nome:"Amazon Prime Video",brand:"Amazon",logo:"primevideo",categoria:"Streaming",plans:[{dur:"Partilhada 1 Mês",preco:149},{dur:"Partilhada 3 Meses",preco:299,save:"33%"},{dur:"Privada 1 Mês",preco:399},{dur:"Privada 3 Meses",preco:999,save:"17%"}],stock:9999,tag:"new",rating:4.7,sold:620,
+   descricao:"Streaming com filmes exclusivos, séries originais Amazon e conteúdo 4K HDR. Conta partilhada ou privada.",
+   features:["Filmes Exclusivos","Séries Originais","4K HDR","TV · Telemóvel · PC"]},
+  {id:"d19",nome:"Crunchyroll Mega Fan",brand:"Crunchyroll",logo:"crunchyroll",categoria:"Streaming",plans:[{dur:"Partilhada 1 Mês",preco:199},{dur:"Partilhada 1 Ano",preco:799,save:"67%"}],stock:9999,tag:"new",rating:4.8,sold:450,
+   descricao:"O melhor do anime em HD e 4K. Conta partilhada, sem anúncios, ver offline. TV, telemóvel e PC.",
+   features:["Anime HD/4K","Sem Anúncios","Ver Offline","TV · Telemóvel · PC"]},
+  {id:"d20",nome:"Cartão Virtual Internacional",brand:"Virtual Card",logo:"virtualcard",categoria:"Pagamentos",plans:[{dur:"Assistência",preco:500},{dur:"Aquisição (5 Anos)",preco:760}],stock:9999,tag:"hot",rating:4.9,sold:1800,
+   descricao:"Cartão virtual Visa/Mastercard internacional. Válido 5 anos, +$5 de bónus grátis na aquisição. Número, validade e CVC na frente do cartão.",
+   features:["Visa/Mastercard","Pagamentos Internacionais","Subscrições Digitais","Compras no Estrangeiro","+$5 Bónus Grátis","Válido 5 Anos"]},
+  {id:"d21",nome:"Claude Pro",brand:"Anthropic",logo:"claude",categoria:"Inteligência Artificial",plans:[{dur:"Mensal",preco:269}],stock:9999,tag:"new",rating:4.9,sold:540,
+   descricao:"Claude Pro com modelos de IA avançados. Lê PDFs, imagens e ficheiros. Pesquisa na internet, programação, cria documentos e apresentações.",
+   features:["Modelos IA Avançados","Lê PDFs/Imagens/Ficheiros","Pesquisa na Internet","Programação e Código","Documentos e Apresentações","Projectos Organizados"],
+   aviso:"Não nos responsabilizamos pelo consumo de créditos — o uso é da inteira responsabilidade do cliente."},
+  {id:"d22",nome:"Microsoft 365 /Copilot",brand:"Microsoft",logo:"m365",categoria:"Inteligência Artificial",plans:[{dur:"Anual",preco:499}],stock:9999,tag:"new",rating:4.8,sold:780,
+   descricao:"Microsoft 365 com Copilot incluído. Conta do cliente com Word, Excel, PowerPoint e Copilot IA integrado.",
+   features:["Copilot IA Incluído","Word & Excel","PowerPoint","Conta do Cliente"]},
+  {id:"d23",nome:"Gemini Pro",brand:"Google",logo:"gemini",categoria:"Inteligência Artificial",plans:[{dur:"Mensal",preco:149},{dur:"Anual",preco:499}],stock:9999,tag:"hot",rating:4.8,sold:650,
+   descricao:"Google Gemini Pro (AI Pro). Activação na conta do cliente com 5TB de armazenamento e Antigravity+.",
+   features:["Ativação na Conta","5TB Armazenamento","Antigravity+","Google AI Pro"]},
+  {id:"d24",nome:"Grok",brand:"xAI",logo:"grok",categoria:"Inteligência Artificial",plans:[{dur:"Mensal",preco:299}],stock:9999,tag:"new",rating:4.7,sold:320,
+   descricao:"Grok por xAI. Conta privada com acesso ao modelo de IA avançado integrado na plataforma X.",
+   features:["Conta Privada","IA Avançada","Integração X","Análise em Tempo Real"]}
 ];
 
 var REVIEWS = [
@@ -731,7 +802,7 @@ var REVIEWS = [
   {name:"Ana S.",avatar:"AS",color:"#ec4899",stars:5,text:"Excelente serviço! ChatGPT Plus funcionou na hora. Já é a terceira compra.",product:"ChatGPT Plus",date:"Há 5 dias"},
   {name:"João P.",avatar:"JP",color:"#10b981",stars:5,text:"Melhor loja digital de Moçambique. Preços justos e suporte rápido pelo WhatsApp.",product:"Spotify Premium",date:"Há 1 semana"},
   {name:"Maria L.",avatar:"ML",color:"#f59e0b",stars:4,text:"Canva Pro a funcionar perfeitamente. Pagamento por M-Pesa muito prático.",product:"Canva Pro",date:"Há 1 semana"},
-  {name:"Pedro D.",avatar:"PD",color:"#a855f7",stars:5,text:"Já sou revendedor há 6 meses. Margem excelente e os clientes adoram!",product:"Programa de Revenda",date:"Há 2 semanas"},
+  {name:"Pedro D.",avatar:"PD",color:"#a855f7",stars:5,text:"Já sou revendedor há 6 meses. Fico com 100% do lucro e os clientes adoram!",product:"Programa de Revenda",date:"Há 2 semanas"},
   {name:"Fatima R.",avatar:"FR",color:"#06b6d4",stars:5,text:"Office 365 original, activou sem problemas. Entrega super rápida!",product:"Office 365",date:"Há 3 semanas"}
 ];
 
@@ -765,7 +836,12 @@ var S = {
   toast: null,
   toastTimer: null,
   adminPanel: false,
-  editProduct: null
+  editProduct: null,
+  resellerDash: false,
+  rdTab: "catalogo",
+  rdSellModal: null,
+  rdSellClient: "",
+  rdSellPrice: ""
 };
 
 function fmtMT(n){ return (Number(n)||0).toLocaleString("pt-PT",{minimumFractionDigits:0,maximumFractionDigits:0})+" MT"; }
@@ -860,6 +936,120 @@ function buildWhatsAppMsg(){
   return encodeURIComponent(lines.join("\n"));
 }
 
+// --- Reseller Dashboard ---
+function getResellerSession(){
+  try{var d=localStorage.getItem("reisvip_reseller");return d?JSON.parse(d):null;}catch(e){return null;}
+}
+function setResellerSession(data){
+  try{localStorage.setItem("reisvip_reseller",JSON.stringify(data));}catch(e){}
+}
+function getResellerOrders(){
+  try{var d=localStorage.getItem("reisvip_reseller_orders");return d?JSON.parse(d):[];}catch(e){return [];}
+}
+function saveResellerOrders(orders){
+  try{localStorage.setItem("reisvip_reseller_orders",JSON.stringify(orders));}catch(e){}
+}
+function resellerStats(){
+  var orders=getResellerOrders();
+  var total=0,count=orders.length,pending=0;
+  orders.forEach(function(o){total+=o.sellPrice||0;if(o.status==="pending")pending++;});
+  return {total:total,count:count,pending:pending};
+}
+
+function renderResellerDashboard(){
+  if(!S.resellerDash) return "";
+  var rs=getResellerSession();
+  var stats=resellerStats();
+  var orders=getResellerOrders();
+  var tabs=[
+    {id:"catalogo",label:"📦 Catálogo",labelEn:"📦 Catalog"},
+    {id:"pedidos",label:"📋 Pedidos",labelEn:"📋 Orders"},
+    {id:"saldo",label:"💰 Saldo",labelEn:"💰 Balance"}
+  ];
+  var h='<div class="rd-overlay">'+
+    '<div class="rd-topbar">'+
+      '<h2>🏪 Painel Revendedor'+(rs?' — '+esc(rs.nome):'')+'</h2>'+
+      '<button class="rd-close" data-act="closeResellerDash">&times;</button>'+
+    '</div>'+
+    '<div class="rd-tabs">';
+  tabs.forEach(function(tab){
+    h+='<div class="rd-tab'+(S.rdTab===tab.id?' active':'')+'" data-act="rdTab" data-tab="'+tab.id+'">'+tab.label+'</div>';
+  });
+  h+='</div><div class="rd-content">';
+
+  h+='<div class="rd-stats">'+
+    '<div class="rd-stat"><div class="rd-stat-val">'+fmtMT(stats.total)+'</div><div class="rd-stat-lbl">Total Vendido</div></div>'+
+    '<div class="rd-stat"><div class="rd-stat-val">'+stats.count+'</div><div class="rd-stat-lbl">Pedidos</div></div>'+
+    '<div class="rd-stat"><div class="rd-stat-val">'+stats.pending+'</div><div class="rd-stat-lbl">Pendentes</div></div>'+
+    '<div class="rd-stat"><div class="rd-stat-val">'+fmtMT(stats.total)+'</div><div class="rd-stat-lbl">Saldo Disponível</div></div>'+
+  '</div>';
+
+  if(S.rdTab==="catalogo"){
+    h+='<h3 style="font-size:15px;font-weight:800;color:#fff;margin-bottom:14px">Produtos disponíveis para revenda</h3>';
+    h+='<div class="rd-prod-grid">';
+    PRODUTOS.forEach(function(p){
+      h+='<div class="rd-prod-card"><div class="rd-prod-head"><div class="rd-prod-logo">'+brandSvg(p.logo)+'</div><div><div class="rd-prod-name">'+esc(p.nome)+'</div></div></div><div class="rd-prod-plans">';
+      p.plans.forEach(function(pl,idx){
+        h+='<div class="rd-plan-row"><span class="rd-plan-name">'+esc(pl.dur)+'</span><span class="rd-plan-price">'+fmtMT(pl.preco)+'</span><button class="rd-sell-btn" data-act="rdSell" data-prod="'+p.id+'" data-plan="'+idx+'">Vender</button></div>';
+      });
+      h+='</div></div>';
+    });
+    h+='</div>';
+  }
+
+  if(S.rdTab==="pedidos"){
+    h+='<h3 style="font-size:15px;font-weight:800;color:#fff;margin-bottom:14px">Seus pedidos de revenda</h3>';
+    if(orders.length===0){
+      h+='<div style="text-align:center;padding:40px 20px;color:var(--muted)"><p style="font-size:40px;margin-bottom:12px">📋</p><p>Nenhum pedido ainda. Comece a vender pelo catálogo!</p></div>';
+    } else {
+      h+='<div class="rd-orders-list">';
+      orders.slice().reverse().forEach(function(o){
+        h+='<div class="rd-order"><div><div class="rd-o-prod">'+esc(o.product)+' ('+esc(o.plan)+')</div><div class="rd-o-client">Cliente: '+esc(o.clientName)+' · '+esc(o.clientPhone)+'</div><div style="font-size:11px;color:var(--faint)">'+esc(o.date)+'</div></div><div style="text-align:right"><div class="rd-o-price">'+fmtMT(o.sellPrice)+'</div><span class="rd-o-status '+o.status+'">'+(o.status==="pending"?"⏳ Pendente":"✅ Enviado")+'</span></div></div>';
+      });
+      h+='</div>';
+    }
+  }
+
+  if(S.rdTab==="saldo"){
+    h+='<h3 style="font-size:15px;font-weight:800;color:#fff;margin-bottom:14px">Saldo e Levantamento</h3>';
+    h+='<div style="text-align:center;padding:30px 20px;background:var(--panel);border:1px solid var(--border);border-radius:14px;margin-bottom:20px"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Saldo Disponível</div><div style="font-size:32px;font-weight:900;color:var(--green)">'+fmtMT(stats.total)+'</div></div>';
+    h+='<div class="rd-withdraw-form"><h4>💸 Solicitar Levantamento</h4>'+
+      '<div class="field" style="margin-bottom:12px"><label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:4px">Valor a levantar (MT)</label><input type="number" id="rdWithdrawAmt" style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:14px" placeholder="Ex: 5000"/></div>'+
+      '<div class="field" style="margin-bottom:12px"><label style="font-size:12px;font-weight:600;color:var(--ink);display:block;margin-bottom:4px">Método</label><select id="rdWithdrawMethod" style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:#fff;font-size:13px"><option value="mpesa">M-Pesa</option><option value="emola">e-Mola</option><option value="banco">Transferência Bancária</option></select></div>'+
+      '<button class="btn btn-primary" style="width:100%" data-act="rdWithdraw">Solicitar Levantamento via WhatsApp</button>'+
+      '<p style="font-size:11px;color:var(--faint);text-align:center;margin-top:8px">O levantamento é processado em até 24h úteis</p>'+
+    '</div>';
+  }
+
+  h+='</div></div>';
+
+  if(S.rdSellModal){
+    var sp=PRODUTOS.find(function(x){return x.id===S.rdSellModal.prodId;});
+    var spl=sp?sp.plans[S.rdSellModal.planIdx]:null;
+    if(sp&&spl){
+      var sellP=Number(S.rdSellPrice)||spl.preco;
+      var lucro=sellP-spl.preco;
+      h+='<div class="rd-sell-modal"><div class="rd-sell-form">'+
+        '<h3>🛒 Vender '+esc(sp.nome)+' ('+esc(spl.dur)+')</h3>'+
+        '<div class="rd-sell-summary">'+
+          '<div class="rd-ss-row"><span>Preço de aquisição:</span><span>'+fmtMT(spl.preco)+'</span></div>'+
+          '<div class="rd-ss-row"><span>Preço de venda:</span><span style="color:var(--brand)">'+fmtMT(sellP)+'</span></div>'+
+          '<div class="rd-ss-row total"><span>Seu lucro:</span><span>'+fmtMT(lucro>0?lucro:0)+'</span></div>'+
+        '</div>'+
+        '<div class="field"><label>Nome do cliente *</label><input type="text" id="rdClientName" placeholder="Nome completo" value="'+esc(S.rdSellClient)+'"/></div>'+
+        '<div class="field"><label>WhatsApp / Telefone do cliente *</label><input type="tel" id="rdClientPhone" placeholder="+258 8X XXX XXXX"/></div>'+
+        '<div class="field"><label>Preço de venda (MT) *</label><input type="number" id="rdSellPriceInput" placeholder="'+spl.preco+'" value="'+(S.rdSellPrice||spl.preco)+'" min="'+spl.preco+'"/></div>'+
+        '<div style="display:flex;gap:10px;margin-top:16px">'+
+          '<button class="btn btn-primary" style="flex:1" data-act="rdConfirmSell">📤 Enviar Pedido via WhatsApp</button>'+
+          '<button class="btn" style="flex:0;background:var(--bg2);color:var(--muted);border:1px solid var(--border)" data-act="rdCloseSell">Cancelar</button>'+
+        '</div>'+
+      '</div></div>';
+    }
+  }
+
+  return h;
+}
+
 function render(){
   var app = document.getElementById("app");
   app.innerHTML =
@@ -876,13 +1066,15 @@ function render(){
     renderTrustStrip() +
     renderFooter() +
     renderBottomNav() +
+    '<a href="https://wa.me/'+CONFIG.whatsapp.replace(/[^0-9]/g,'')+'" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Suporte"><span class="wa-float-label">'+t("suporte")+'</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>' +
     renderCartDrawer() +
     renderProductModal() +
     renderCheckoutModal() +
     renderResellerModal() +
     renderTermsModal() +
     renderToast() +
-    renderAdminPanel();
+    renderAdminPanel() +
+    renderResellerDashboard();
   bindEvents();
 }
 
@@ -1078,6 +1270,7 @@ function renderResellerSection(){
         '<div class="verify-note">⚠️ '+t("verificacaoNota")+'</div>'+
       '</div>'+
       '<div class="reseller-cta">'+
+        (getResellerSession()?'<button class="btn btn-primary btn-lg" data-act="openResellerDash" style="background:linear-gradient(135deg,#10b981,#059669)">🏪 Aceder ao Painel de Revendedor</button>':'')+
         '<button class="btn btn-primary btn-lg" data-act="openResellerModal">📋 '+t("candidatarAgora2")+'</button>'+
         '<a class="btn btn-whatsapp" href="https://wa.me/'+CONFIG.whatsapp.replace(/[^0-9]/g,'')+'?text='+encodeURIComponent(t("saberMaisRevenda"))+'" target="_blank">💬 '+t("falarEquipa")+'</a>'+
       '</div>'+
@@ -1200,6 +1393,7 @@ function renderProductModal(){
         '<div class="modal-rating"><span class="stars">'+starsHtml(p.rating)+'</span> <strong>'+p.rating+'</strong> <span class="cnt">('+p.sold.toLocaleString()+' '+t("vendidos")+')</span></div>'+
         '<div class="modal-desc">'+esc(p.descricao)+'</div>'+
         featsHtml+
+        (p.aviso?'<div style="background:rgba(255,180,0,.12);border:1px solid rgba(255,180,0,.3);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:12px;color:#ffb400;display:flex;align-items:flex-start;gap:8px"><span style="font-size:16px">⚠️</span><span>'+esc(p.aviso)+'</span></div>':'')+
         plansHtml+
         '<div style="font-size:24px;font-weight:800;color:#fff;margin-bottom:12px">'+fmtMT(plan.preco)+' <span style="font-size:13px;font-weight:500;color:var(--muted)">/'+esc(plan.dur)+'</span></div>'+
         '<div class="modal-stock">'+stockHtml+'</div>'+
@@ -1301,7 +1495,7 @@ function renderResellerModal(){
           '<div class="field"><label>Morada completa *</label><textarea id="rfMorada" placeholder="Bairro, rua, número da casa ou referência"></textarea></div>'+
         '</div>'+
         '<div class="rf-section">'+
-          '<h3>💳 Dados para Pagamento de Comissões</h3>'+
+          '<h3>💳 Dados para Recebimento de Valores</h3>'+
           '<div class="field"><label>Método preferido *</label><select id="rfPayMethod"><option value="">Seleccione...</option><option value="mpesa">M-Pesa</option><option value="emola">e-Mola</option><option value="banco">Transferência Bancária</option></select></div>'+
           '<div class="field"><label>Número da conta / telefone M-Pesa *</label><input type="text" id="rfPayNum" placeholder="Número para recebimento"/></div>'+
         '</div>'+
@@ -1310,9 +1504,8 @@ function renderResellerModal(){
           '<div class="rf-terms">'+
             '<h4>Termos do Programa de Revenda Reisvip</h4>'+
             '<ul>'+
-              '<li>O revendedor compromete-se a vender os produtos aos preços sugeridos ou superiores.</li>'+
-              '<li>É proibida a revenda de produtos a preços abaixo do custo de aquisição.</li>'+
-              '<li>As comissões são pagas semanalmente (mínimo de 500 MT acumulados).</li>'+
+              '<li>O revendedor adquire os produtos ao preço de atacado da Reisvip e revende ao preço que desejar — o valor da venda é 100% do revendedor.</li>'+
+              '<li>O saldo acumulado das vendas pode ser levantado a qualquer momento através do painel.</li>'+
               '<li>A Reisvip reserva-se o direito de suspender contas que violem os termos.</li>'+
               '<li>O revendedor é responsável pelo suporte ao seu cliente final.</li>'+
               '<li>A verificação de identidade é obrigatória para levantamento de valores.</li>'+
@@ -1360,9 +1553,9 @@ function renderTermsModal(){
       '<h4>Cláusula 10.ª — Duração e Renovação</h4>'+
       '<p>As subscrições têm duração definida no plano adquirido. A renovação não é automática, cabendo ao cliente solicitar a renovação antes do vencimento. A Reisvip envia lembretes de vencimento por WhatsApp.</p>'+
       '<h4>Cláusula 11.ª — Programa de Revenda</h4>'+
-      '<p>O programa de revenda permite a comercialização de produtos Reisvip por revendedores autorizados, com preços diferenciados e comissões sobre vendas. A candidatura está sujeita a verificação de identidade e aprovação.</p>'+
+      '<p>O programa de revenda permite a comercialização de produtos Reisvip por revendedores autorizados. O revendedor adquire os produtos ao preço de atacado e revende ao preço que desejar, ficando com 100% do valor da venda. A candidatura está sujeita a verificação de identidade e aprovação.</p>'+
       '<h4>Cláusula 12.ª — Obrigações do Revendedor</h4>'+
-      '<p>O revendedor compromete-se a: (a) não revender abaixo do preço mínimo estipulado; (b) prestar informação verdadeira aos clientes; (c) encaminhar reclamações para a equipa Reisvip; (d) manter confidenciais os dados de acesso ao painel de revendedor.</p>'+
+      '<p>O revendedor compromete-se a: (a) prestar informação verdadeira aos clientes; (b) encaminhar reclamações para a equipa Reisvip; (c) manter confidenciais os dados de acesso ao painel de revendedor; (d) não utilizar a marca Reisvip sem autorização.</p>'+
       '<h4>Cláusula 13.ª — Propriedade Intelectual</h4>'+
       '<p>Todos os conteúdos do website (textos, imagens, logótipos, design) são propriedade da Reisvip ou dos respectivos titulares de marca. É proibida a reprodução sem autorização expressa.</p>'+
       '<h4>Cláusula 14.ª — Protecção de Dados</h4>'+
@@ -1538,9 +1731,62 @@ function bindEvents(){
           "✅ Termos aceites\n"+
           "✅ Autorização de dados aceite";
         window.open("https://wa.me/"+CONFIG.whatsapp.replace(/[^0-9]/g,"")+"?text="+encodeURIComponent(msg),"_blank");
+        setResellerSession({nome:rfNome,tel:rfTel,email:rfEmail,prov:rfProv,payMethod:rfPayMethod,payNum:rfPayNum,date:new Date().toISOString()});
         S.resellerModal=false;
         showToast("Candidatura enviada! Verificaremos em até 48h.","🎉");
         render();
+      }
+      else if(act==="openResellerDash"){ S.resellerDash=true; S.rdTab="catalogo"; render(); window.scrollTo({top:0}); }
+      else if(act==="closeResellerDash"){ S.resellerDash=false; render(); }
+      else if(act==="rdTab"){ S.rdTab=el.getAttribute("data-tab"); render(); }
+      else if(act==="rdSell"){
+        var prodId=el.getAttribute("data-prod");
+        var planIdx=parseInt(el.getAttribute("data-plan"));
+        S.rdSellModal={prodId:prodId,planIdx:planIdx};
+        S.rdSellClient="";
+        S.rdSellPrice="";
+        render();
+      }
+      else if(act==="rdCloseSell"){ S.rdSellModal=null; render(); }
+      else if(act==="rdConfirmSell"){
+        var cn=(document.getElementById("rdClientName").value||"").trim();
+        var cp=(document.getElementById("rdClientPhone").value||"").trim();
+        var sp2=Number((document.getElementById("rdSellPriceInput").value||"0"));
+        if(!cn||!cp){showToast("Preencha nome e telefone do cliente!","⚠️");return;}
+        var sm=S.rdSellModal;
+        var prod=PRODUTOS.find(function(x){return x.id===sm.prodId;});
+        var plan=prod?prod.plans[sm.planIdx]:null;
+        if(!prod||!plan) return;
+        if(sp2<plan.preco){showToast("Preço de venda não pode ser menor que o preço de aquisição!","⚠️");return;}
+        var rs2=getResellerSession()||{nome:"Revendedor"};
+        var order={id:"RD-"+Date.now().toString(36).toUpperCase(),product:prod.nome,plan:plan.dur,basePrice:plan.preco,sellPrice:sp2,clientName:cn,clientPhone:cp,status:"pending",date:new Date().toLocaleDateString("pt-PT")};
+        var orders2=getResellerOrders();
+        orders2.push(order);
+        saveResellerOrders(orders2);
+        var omsg="*🏪 PEDIDO DE REVENDA REISVIP*\n\n"+
+          "*Revendedor:* "+rs2.nome+"\n"+
+          "*Produto:* "+prod.nome+" ("+plan.dur+")\n"+
+          "*Cliente:* "+cn+"\n"+
+          "*Tel Cliente:* "+cp+"\n"+
+          "*Preço de aquisição:* "+fmtMT(plan.preco)+"\n"+
+          "*Ref:* "+order.id;
+        window.open("https://wa.me/"+CONFIG.whatsapp.replace(/[^0-9]/g,"")+"?text="+encodeURIComponent(omsg),"_blank");
+        S.rdSellModal=null;
+        showToast("Pedido enviado com sucesso!","✅");
+        render();
+      }
+      else if(act==="rdWithdraw"){
+        var wAmt=Number((document.getElementById("rdWithdrawAmt").value||"0"));
+        var wMethod=(document.getElementById("rdWithdrawMethod").value||"mpesa");
+        if(!wAmt||wAmt<100){showToast("Valor mínimo de levantamento: 100 MT","⚠️");return;}
+        var rs3=getResellerSession()||{nome:"Revendedor",payNum:""};
+        var wmsg="*💸 SOLICITAÇÃO DE LEVANTAMENTO*\n\n"+
+          "*Revendedor:* "+rs3.nome+"\n"+
+          "*Valor:* "+fmtMT(wAmt)+"\n"+
+          "*Método:* "+wMethod+"\n"+
+          "*Conta/Tel:* "+(rs3.payNum||"(não informado)");
+        window.open("https://wa.me/"+CONFIG.whatsapp.replace(/[^0-9]/g,"")+"?text="+encodeURIComponent(wmsg),"_blank");
+        showToast("Solicitação de levantamento enviada!","✅");
       }
     };
   });
